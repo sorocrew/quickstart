@@ -43,6 +43,12 @@ npx sorocrew fund GAAAAAAAAAAA...
 
 ---
 
+## Contributing
+
+All pull requests should target the `dev` branch. See [CONTRIBUTING.md](./CONTRIBUTING.md) for full guidelines and [DEVELOPMENT.md](./DEVELOPMENT.md) for local setup.
+
+---
+
 ## License
 
 MIT © [SoroCrew](https://github.com/sorocrew)
