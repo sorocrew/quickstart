@@ -1,12 +1,28 @@
 #!/usr/bin/env node
 
+const { execSync } = require('child_process');
 const http = require('http');
 
 const command = process.argv[2] || 'help';
 
 console.log('🚀 [SoroCrew CLI v0.1.0] — Local Soroban Orchestrator\n');
 
+function isDockerAvailable() {
+  try {
+    execSync('docker --version', { stdio: 'ignore' });
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 if (command === 'status') {
+  if (!isDockerAvailable()) {
+    console.log('❌ Docker is not installed on this system.');
+    console.log('💡 Install Docker from https://docs.docker.com/get-docker/ to run local standalone node.');
+    console.log('💡 Note: SoroCrew Studio can also connect directly to Testnet & Futurenet without Docker!\n');
+  }
+
   const req = http.get('http://localhost:8000/health', (res) => {
     if (res.statusCode === 200) {
       console.log('✅ Local Standalone Docker Instance is RUNNING on port 8000.');
@@ -17,7 +33,7 @@ if (command === 'status') {
   });
 
   req.on('error', () => {
-    console.log('❌ Local Standalone Docker Instance is OFF. Run "npm start" to launch.');
+    console.log('ℹ️ Local Standalone Docker Instance is OFF. Run "npm start" to launch when Docker is installed.');
   });
 } else if (command === 'fund') {
   const pubKey = process.argv[3];

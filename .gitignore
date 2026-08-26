@@ -1,2 +1,10 @@
-node_modules
+# Dependencies
+node_modules/
+
+# IDE & OS
 .DS_Store
+.vscode/
+.idea/
+*.log
+.env
+.env.local

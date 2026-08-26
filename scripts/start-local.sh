@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
 set -e
 
+echo "🚀 [SoroCrew] Checking Docker installation..."
+
+if ! command -v docker &> /dev/null; then
+    echo "❌ Error: 'docker' command was not found in your PATH."
+    echo ""
+    echo "💡 Docker is required to run a local Soroban Standalone node."
+    echo "   • Install Docker: https://docs.docker.com/get-docker/"
+    echo "   • Or use SoroCrew Studio directly with Stellar Testnet / Futurenet (no Docker required)!"
+    exit 1
+fi
+
 echo "🚀 [SoroCrew] Starting Local Standalone Soroban Docker Container..."
 docker compose up -d
 
