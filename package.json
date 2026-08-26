@@ -8,7 +8,8 @@
   "scripts": {
     "start": "bash scripts/start-local.sh",
     "stop": "docker compose down",
-    "status": "node bin/sorocrew-cli.js status"
+    "status": "node bin/sorocrew-cli.js status",
+    "lint": "node --check bin/sorocrew-cli.js"
   },
   "keywords": [
     "stellar",
