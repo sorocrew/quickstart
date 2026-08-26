@@ -1,4 +1,4 @@
-# @sorocrew/quickstart ⚡
+# @sorocrew/quickstart
 
 ![SoroCrew Logo](./crew-logo-white.svg)
 
@@ -8,7 +8,7 @@ This repository provides automated Docker Compose scripts to launch a local stan
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Launch Local Docker Instance
 
@@ -32,7 +32,7 @@ npx sorocrew fund GAAAAAAAAAAA...
 
 ---
 
-## 🌐 Endpoints Overview
+## Endpoints Overview
 
 | Service | Local URL |
 | :--- | :--- |
@@ -43,6 +43,6 @@ npx sorocrew fund GAAAAAAAAAAA...
 
 ---
 
-## 📄 License
+## License
 
 MIT © [SoroCrew](https://github.com/sorocrew)

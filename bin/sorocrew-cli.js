@@ -5,7 +5,7 @@ const http = require('http');
 
 const command = process.argv[2] || 'help';
 
-console.log('🚀 [SoroCrew CLI v0.1.0] — Local Soroban Orchestrator\n');
+console.log('[SoroCrew CLI v0.1.0] — Local Soroban Orchestrator\n');
 
 function isDockerAvailable() {
   try {
@@ -18,22 +18,22 @@ function isDockerAvailable() {
 
 if (command === 'status') {
   if (!isDockerAvailable()) {
-    console.log('❌ Docker is not installed on this system.');
-    console.log('💡 Install Docker from https://docs.docker.com/get-docker/ to run local standalone node.');
-    console.log('💡 Note: SoroCrew Studio can also connect directly to Testnet & Futurenet without Docker!\n');
+    console.log('Error: Docker is not installed on this system.');
+    console.log('Install Docker from https://docs.docker.com/get-docker/ to run local standalone node.');
+    console.log('Note: SoroCrew Studio can also connect directly to Testnet & Futurenet without Docker.\n');
   }
 
   const req = http.get('http://localhost:8000/health', (res) => {
     if (res.statusCode === 200) {
-      console.log('✅ Local Standalone Docker Instance is RUNNING on port 8000.');
-      console.log('   RPC: http://localhost:8000/soroban/rpc');
+      console.log('Local Standalone Docker Instance is RUNNING on port 8000.');
+      console.log('RPC: http://localhost:8000/soroban/rpc');
     } else {
-      console.log(`⚠️ Docker Instance returned HTTP status ${res.statusCode}.`);
+      console.log(`Docker Instance returned HTTP status ${res.statusCode}.`);
     }
   });
 
   req.on('error', () => {
-    console.log('ℹ️ Local Standalone Docker Instance is OFF. Run "npm start" to launch when Docker is installed.');
+    console.log('Local Standalone Docker Instance is OFF. Run "npm start" to launch when Docker is installed.');
   });
 } else if (command === 'fund') {
   const pubKey = process.argv[3];
@@ -45,9 +45,9 @@ if (command === 'status') {
   console.log(`Funding ${pubKey} via Friendbot...`);
   http.get(`http://localhost:8000/friendbot?addr=${encodeURIComponent(pubKey)}`, (res) => {
     if (res.statusCode === 200) {
-      console.log('🎉 Successfully funded test account with 10,000 test XLM!');
+      console.log('Successfully funded test account with 10,000 test XLM.');
     } else {
-      console.log(`❌ Friendbot error: HTTP ${res.statusCode}`);
+      console.log(`Friendbot error: HTTP ${res.statusCode}`);
     }
   });
 } else {
