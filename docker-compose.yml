@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  stellar-quickstart:
+    image: stellar/quickstart:testing
+    container_name: sorocrew-standalone
+    ports:
+      - "8000:8000"
+    command: --standalone --enable-soroban-rpc
+    environment:
+      - LOG_LEVEL=info
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 10

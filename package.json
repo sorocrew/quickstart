@@ -1,0 +1,22 @@
+{
+  "name": "@sorocrew/quickstart",
+  "version": "0.1.0",
+  "description": "Local Soroban standalone node container orchestrator & test contract seed scripts",
+  "bin": {
+    "sorocrew": "./bin/sorocrew-cli.js"
+  },
+  "scripts": {
+    "start": "bash scripts/start-local.sh",
+    "stop": "docker compose down",
+    "status": "node bin/sorocrew-cli.js status"
+  },
+  "keywords": [
+    "stellar",
+    "soroban",
+    "docker",
+    "quickstart",
+    "cli"
+  ],
+  "author": "SoroCrew",
+  "license": "MIT"
+}
