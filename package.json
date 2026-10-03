@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Local Soroban standalone node container orchestrator & test contract seed scripts",
   "bin": {
-    "sorocrew": "./bin/sorocrew-cli.js"
+    "sorocrew": "bin/sorocrew-cli.js"
   },
   "scripts": {
     "start": "bash scripts/start-local.sh",
