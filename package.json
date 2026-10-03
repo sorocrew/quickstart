@@ -5,6 +5,14 @@
   "bin": {
     "sorocrew": "bin/sorocrew-cli.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sorocrew/quickstart.git"
+  },
+  "homepage": "https://github.com/sorocrew/quickstart#readme",
+  "bugs": {
+    "url": "https://github.com/sorocrew/quickstart/issues"
+  },
   "scripts": {
     "start": "bash scripts/start-local.sh",
     "stop": "docker compose down",

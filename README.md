@@ -1,5 +1,8 @@
 # @sorocrew/quickstart
 
+[![npm version](https://img.shields.io/npm/v/@sorocrew/quickstart.svg?color=2563EB)](https://www.npmjs.com/package/@sorocrew/quickstart)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](https://opensource.org/licenses/MIT)
+
 ![SoroCrew Logo](./crew-logo-white.svg)
 
 > **Local Soroban Standalone Docker Orchestrator & CLI Tooling** for SoroCrew Studio testing.
